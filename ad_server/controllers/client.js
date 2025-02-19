@@ -2,10 +2,12 @@ import Product from "../models/Product.js";
 import ProductStat from "../models/ProductStat.js";
 import Transaction from "../models/Transaction.js";
 import User from "../models/User.js";
+import getCountryIso3 from "country-iso-2-to-3";
 
 export const getProducts = async (req, res) => {
     try {
         const products = await Product.find();
+
         const productWithStats = await Promise.all(
             products.map(async (product) => {
                 const stat = await ProductStat.find({
@@ -17,6 +19,7 @@ export const getProducts = async (req, res) => {
                 }
             })
         );
+
         res.status(200).json(productWithStats);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -26,6 +29,7 @@ export const getProducts = async (req, res) => {
 export const getCustomers = async (req, res) => {
     try {
         const customers = await User.find({ role: "user" }).select("-password");
+
         res.status(200).json(customers);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -61,6 +65,31 @@ export const getTransactions = async (req, res) => {
         const total = await Transaction.countDocuments();
 
         res.status(200).json({ transactions, total });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    };
+};
+
+export const getGeography = async (req, res) => {
+    try {
+        const users = await User.find();
+
+        const mappedLocation = users.reduce((acc, { country }) => {
+            const countryISO3 = getCountryIso3(country);
+            if (!acc[countryISO3]) {
+                acc[countryISO3] = 0;
+            }
+            acc[countryISO3]++;
+            return acc;
+        }, {});
+
+        const formattedLocation = Object.entries(mappedLocation).map(
+            ([country, count]) => {
+                return { id: country, value: count }
+            }
+        );
+
+        res.status(200).json(formattedLocation);
     } catch (error) {
         res.status(404).json({ message: error.message });
     };
