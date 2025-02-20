@@ -88,6 +88,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
                 reverse: false
             }}
             yFormat=" >-.2f"
+            enableArea={isDashboard}
             axisTop={null}
             axisRight={null}
             axisBottom={{
@@ -105,6 +106,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
             }}
             axisLeft={{
                 tickSize: 5,
+                tickValues: 5,
                 tickPadding: 5,
                 tickRotation: 0,
                 legend: isDashboard ? "" : `Total ${view === "sales" ? "Revenues" : "Units"} for Year`,
