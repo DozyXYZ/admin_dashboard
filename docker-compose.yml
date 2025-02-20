@@ -1,0 +1,38 @@
+version: "3"
+
+name: t94-ad
+
+services:
+  ad_server:
+    build: 
+      context: ./ad_server
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./ad_server/.env
+    volumes:
+      - ./ad_server:/app
+      - /app/node_modules
+    networks:
+      - t94-ad
+    ports:
+      - "5001:5001"
+
+  ad_client:
+    build: 
+      context: ./ad_client
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./ad_client/.env.local
+    volumes:
+      - ./ad_client:/app
+      - /app/node_modules
+    networks:
+      - t94-ad
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ad_server
+
+networks:
+  t94-ad:
+    driver: bridge
