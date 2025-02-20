@@ -16,7 +16,8 @@ import Product from './models/Product.js';
 import ProductStat from './models/ProductStat.js';
 import Transaction from './models/Transaction.js';
 import OverallStat from './models/OverallStat.js';
-import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat } from './data/index.js';
+import AffiliateStat from './models/AffiliateStat.js';
+import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat, dataAffiliateStat } from './data/index.js';
 
 /* CONFIGURATION */
 dotenv.config();
@@ -48,4 +49,5 @@ mongoose
         // ProductStat.insertMany(dataProductStat);
         // Transaction.insertMany(dataTransaction);
         // OverallStat.insertMany(dataOverallStat);
+        // AffiliateStat.insertMany(dataAffiliateStat);
     }).catch((error) => console.log(`${error} did not connect`));
