@@ -5,11 +5,11 @@
 `ad_server` is a backend server application built with Node.js and Express. It uses MongoDB as its database and includes various middleware for environment configuration and security. This server is created based on MVC Framework. I learnt about Mongo data modelling and aggregate function to query data faster.
 
 ### Structure
-**controllers/**: Contains controller functions that handle incoming requests and interact with the models.
-**models/**: Contains Mongoose models that define the schema for the MongoDB collections used in the application.
-**routes/**: Contains route definitions that map HTTP requests to the appropriate controller functions.
-**data/**: Contain the mock data of the project
-**index.js**: The entry point of the server application, setting up the Express app and connecting to the MongoDB database.
+- **controllers/**: Contains controller functions that handle incoming requests and interact with the models.
+- **models/**: Contains Mongoose models that define the schema for the MongoDB collections used in the application.
+- **routes/**: Contains route definitions that map HTTP requests to the appropriate controller functions.
+- **data/**: Contain the mock data of the project
+- **index.js**: The entry point of the server application, setting up the Express app and connecting to the MongoDB database.
 
 ### Main Dependencies
 **body-parser**: Middleware for parsing request bodies.  
@@ -26,14 +26,14 @@
 `ad_client` is a React-based application designed for managing and displaying administration data. It utilizes Material UI for styling and layout, Redux for state management, and Nivo and Material for data visualization. I learnt to layout the page with box and theme color, light mode with state management, and design various endpoints for different purposes.
 
 ### Structure
-**src/assets/**: Contains mock user profile picture.
-**src/components/**: Contains reusable components for design.
-**src/scenes/**: Contains configuration for all the project pages.
-**src/state/**: Contains API configuration, endpoints, hooks in api.js. Contain global state management for "light" and "dark" mode in index.js.
-**App.js**: Sets up the main structure of the application with theming, routing, and state management.
-**index.css**: Sets up global styles.
-**index.js**: Sets up the entry point for the application.
-**theme.js**: Defines theme settings using Material-UI.
+- **src/assets/**: Contains mock user profile picture.
+- **src/components/**: Contains reusable components for design.
+- **src/scenes/**: Contains configuration for all the project pages.
+- **src/state/**: Contains API configuration, endpoints, hooks in api.js. Contain global state management for "light" and "dark" mode in index.js.
+- **App.js**: Sets up the main structure of the application with theming, routing, and state management.
+- **index.css**: Sets up global styles.
+- **index.js**: Sets up the entry point for the application.
+- **theme.js**: Defines theme settings using Material-UI.
 
 ### Main Dependencies
 **@emotion/react**: Library for writing CSS styles with JavaScript.  
