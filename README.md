@@ -29,7 +29,7 @@
 - **src/assets/**: Contains mock user profile picture.
 - **src/components/**: Contains reusable components for design.
 - **src/scenes/**: Contains configuration for all the project pages.
-- **src/state/**: Contains API configuration, endpoints, hooks in api.js. Contain global state management for "light" and "dark" mode in index.js.
+- **src/state/**: Contains API configuration, endpoints, hooks in `api.js`. Contain global state management for "light" and "dark" mode in `index.js`.
 - **App.js**: Sets up the main structure of the application with theming, routing, and state management.
 - **index.css**: Sets up global styles.
 - **index.js**: Sets up the entry point for the application.
@@ -67,21 +67,21 @@
    ```
    npm i
    ```
-4. Create a .env file in the root directory of ad_server and add your MongoDB connection string (the string can be difference)
+4. Create a `.env` file in the root directory of `ad_server` and add your MongoDB connection string (the string can be difference)
    ```
    MONGO_URL="mongodb+srv://<database_username>:<password>@trial.ljhqm.mongodb.net/<database_name>?retryWrites=true&w=majority&appName=Trial"
    PORT=<PORT_NUMBER>
    ```
-5. Uncomment the comments in the "MONGOOSE CONNECTION" part in the index.js file in the main folder
+5. Uncomment the comments in the "MONGOOSE CONNECTION" part in the `index.js` file in the main folder
 6. Start the server, the first start will upload the data to your MongoDB database, you have to this only once
    ```
    npm run dev
    ```
-7. Comment out the line in the "MONGOOSE CONNECTION", save the file the reload the server.
+7. Comment out the line in the "MONGOOSE CONNECTION", save the file to reload the server.
 8. The database and server is ready.
 
 ## Client Preparation
-1. Navigate to the client folder from the server folder:
+1. Open a new terminal and navigate to the client folder from the server folder:
    ```
    cd ..
    cd ad_client
@@ -90,7 +90,7 @@
    ```
    npm i --legacy-peer-deps
    ```
-3. Create a .env.local file in the root directory of ad_client and add in the following line. The port number should match with the one in the .env of the server side:
+3. Create a `.env.local` file in the root directory of `ad_client` and add in the following line. The port number should match with the one in the `.env` of the server side:
    ```
    REACT_APP_BASE_URL=http://localhost:<PORT_NUMBER>
    ```
@@ -102,6 +102,8 @@
 
 # Docker Desktop (Optional)
 If you have Docker Desktop, you can deploy the project there.
+
+**Note**: Change the ports in the `ad_server` service in `docker-compose.yml` file to the port you put in ad_server/.env file.
 
 In the root directory of the project, run the command:
    ```
