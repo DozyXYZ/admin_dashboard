@@ -1,10 +1,15 @@
 # Introduction
+
 `admin_dashboard` is a MERN stack project. I created this project to practice full-stack development, JavaScript, web design, and deployment on Docker Desktop.
 
+[Watch the demo video](https://github.com/user-attachments/assets/47041bc7-7483-4b26-9ff6-112d86def9b3)
+
 ## ad_server
+
 `ad_server` is a backend server application built with Node.js and Express. It uses MongoDB as its database and includes various middleware for environment configuration and security. This server is created based on MVC Framework. I learnt about Mongo data modelling and aggregate function to query data faster.
 
 ### Structure
+
 - **controllers/**: Contains controller functions that handle incoming requests and interact with the models.
 - **models/**: Contains Mongoose models that define the schema for the MongoDB collections used in the application.
 - **routes/**: Contains route definitions that map HTTP requests to the appropriate controller functions.
@@ -12,6 +17,7 @@
 - **index.js**: The entry point of the server application, setting up the Express app and connecting to the MongoDB database.
 
 ### Main Dependencies
+
 **body-parser**: Middleware for parsing request bodies.  
 **cors**: Middleware for enabling Cross-Origin Resource Sharing.  
 **country-iso-2-to-3**: Utility for converting country ISO codes.  
@@ -20,12 +26,14 @@
 **helmet**: Security middleware for HTTP headers.  
 **mongoose**: MongoDB object modeling tool.  
 **morgan**: HTTP request logger middleware.  
-**nodemon**: Utility for automatically restarting the server during development.  
+**nodemon**: Utility for automatically restarting the server during development.
 
 ## ad_client
+
 `ad_client` is a React-based application designed for managing and displaying administration data. It utilizes Material UI for styling and layout, Redux for state management, and Nivo and Material for data visualization. I learnt to layout the page with box and theme color, light mode with state management, and design various endpoints for different purposes.
 
 ### Structure
+
 - **src/assets/**: Contains mock user profile picture.
 - **src/components/**: Contains reusable components for design.
 - **src/scenes/**: Contains configuration for all the project pages.
@@ -36,6 +44,7 @@
 - **theme.js**: Defines theme settings using Material-UI.
 
 ### Main Dependencies
+
 **@emotion/react**: Library for writing CSS styles with JavaScript.  
 **@emotion/styled**: Styled components for Emotion.  
 **@mui/icons-material**: Material Design icons for MUI.  
@@ -46,15 +55,18 @@
 **react-datepicker**: Datepicker component for React.  
 **react-dom**: Entry point for React DOM rendering.  
 **react-redux**: Official React bindings for Redux.  
-**react-router-dom**: DOM bindings for React Router. 
+**react-router-dom**: DOM bindings for React Router.
 
 # Usage
+
 ## Prerequisites
+
 - Node.js (version 14 or higher)
 - npm (version 5.6 or higher)
 - MongoDB online cluster
 
 ## Server Preparation
+
 1. Clone the repository:
    ```
    git clone https://github.com/DozyXYZ/admin_dashboard.git
@@ -81,6 +93,7 @@
 8. The database and server is ready.
 
 ## Client Preparation
+
 1. Open a new terminal and navigate to the client folder from the server folder:
    ```
    cd ..
@@ -101,11 +114,13 @@
 5. The app is loaded to the browser after compiling.
 
 # Docker Desktop (Optional)
+
 If you have Docker Desktop, you can deploy the project there.
 
 **Note**: Change the ports in the `ad_server` service in `docker-compose.yml` file to the port you put in ad_server/.env file.
 
 In the root directory of the project, run the command:
-   ```
-   docker-compose -f docker-compose.yml up --build
-   ```
+
+```
+docker-compose -f docker-compose.yml up --build
+```
